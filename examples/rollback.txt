@@ -1,0 +1,36 @@
+> source( 'repl.R')
+> d= repl( as.data.frame( diag( 3)), replUseWithin=TRUE, replHistory=TRUE)
+type EOF for repl-end
+type HELP for this
+type AWAY <number> for supressing the help for a number of inputlines ( <=0 forever)
+type ROLLBACK in replUseWithin=TRUE mode, if you want to set to an old rollback point
+type COMMIT in replUseWithin=TRUE mode, if you want to set an new rollback point
+repl > V4=V2+1
+  V1 V2 V3 V4
+1  1  0  0  1
+2  0  1  0  2
+3  0  0  1  1
+
+repl > ROLLBACK
+repl > V4=V3+1
+  V1 V2 V3 V4
+1  1  0  0  1
+2  0  1  0  1
+3  0  0  1  2
+
+repl > COMMIT
+repl > rm( V1)
+  V2 V3 V4
+1  0  0  1
+2  1  0  1
+3  0  1  2
+
+repl > ROLLBACK
+repl > EOF
+exiting repl with prompt: "repl > " 
+> d
+  V1 V2 V3 V4
+1  1  0  0  1
+2  0  1  0  1
+3  0  0  1  2
+

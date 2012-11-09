@@ -1,0 +1,24 @@
+> source( 'repl.R')
+> e= new.env()
+> with( e, {a=1; b=2})
+> repl( e, replUseWithin=FALSE, replHistory=TRUE)
+type EOF for repl-end
+type HELP for this
+type AWAY <number> for supressing the help for a number of inputlines ( <=0 forever)
+type ROLLBACK in replUseWithin=TRUE mode, if you want to set to an old rollback point
+type COMMIT in replUseWithin=TRUE mode, if you want to set an new rollback point
+repl > ls()
+[1] "a" "b"
+
+repl > c= a+b
+[1] 3
+
+repl > EOF
+exiting repl with prompt: "repl > " 
+<environment: 0x8245a1c>
+> with( e, ls())
+[1] "a" "b" "c"
+> with( e, c)
+[1] 3
+
+
