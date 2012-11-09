@@ -6,22 +6,19 @@ type AWAY <number> for supressing the help for a number of inputlines ( <=0 fore
 type ROLLBACK in replUseWithin=TRUE mode, if you want to set to an old rollback point
 type COMMIT in replUseWithin=TRUE mode, if you want to set an new rollback point
 repl > ls()
-  V1 V2 V3
-1  1  0  0
-2  0  1  0
-3  0  0  1
+[1] "V1" "V2" "V3"
 
 repl > V4=V1+1
-  V1 V2 V3 V4
-1  1  0  0  2
-2  0  1  0  1
-3  0  0  1  1
+[1] 2 1 1
+
+repl > rm( V1)
+NULL
 
 repl > EOF
 exiting repl with prompt: "repl > " 
 > d
-  V1 V2 V3 V4
-1  1  0  0  2
-2  0  1  0  1
-3  0  0  1  1
-> 
+  V2 V3 V4
+1  0  0  2
+2  1  0  1
+3  0  1  1
+

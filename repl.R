@@ -121,12 +121,15 @@ repl= function(
    #res= try( eval( parse( text=rodline), envir=replEnvir), silent=TRUE)
    if( replUseWithin)
    {
-    res= try(
+    res=NULL
+    res2= try(
     {
      callStr= parse( text= rodline)
-     retEnvir= within( retEnvir, eval( callStr))
+     retEnvir= within( retEnvir, res <<- eval( callStr))
+     rm( callStr)
     })
-    rm( callStr)
+    if( is.null( res))
+     res= res2
    }
    else
     res= try( eval( parse( text= rodline), envir=retEnvir), silent=TRUE)
