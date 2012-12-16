@@ -14,7 +14,7 @@ repl= function(
  replUseWithin=FALSE,
  replRollback="ROLLBACK",
  replCommit="COMMIT",
- replHistory=FALSE,
+ replHistory=TRUE,
  replDummy=NULL # syntax-dummy
  )
 {
