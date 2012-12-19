@@ -14,5 +14,5 @@ the datatype step by step in the given context.
 It also possible, to run the repl inside of an deep
 called function for debugging or inspecting purposes.
 If it is not really clear, which variables lead to an
-specific behaviour, then this ambiguous functin can 
+specific behaviour, then this ambiguous function can 
 be inspected by running repl inside of it.
